@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap');
+
+.welcome-wallpaper {
+  min-height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #232526 0%, #414345 100%);
+  overflow: hidden;
+}
+
+.welcome-wallpaper::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160vw;
+  height: 160vh;
+  background: conic-gradient(from 90deg, #43c6ac 0%, #191654 30%, #232526 60%, #43c6ac 100%);
+  filter: blur(80px) brightness(0.7);
+  opacity: 0.7;
+  animation: gradientMove 12s linear infinite;
+  z-index: 0;
+}
+
+@keyframes gradientMove {
+  0% { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(360deg) scale(1.1); }
+}
+
+.welcome-content {
+  position: relative;
+  z-index: 1;
+  background: rgba(30, 32, 34, 0.92);
+  border-radius: 32px;
+  box-shadow: 0 8px 40px rgba(67, 198, 172, 0.18);
+  padding: 56px 40px 48px 40px;
+  text-align: center;
+  max-width: 420px;
+  width: 90vw;
+  color: #fff;
+  font-family: 'Roboto', Arial, sans-serif;
+  animation: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.welcome-content h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 18px;
+  letter-spacing: 2px;
+  color: #43c6ac;
+  text-shadow: 0 2px 16px #19165444;
+}
+
+.welcome-content p {
+  font-size: 1.18rem;
+  margin-bottom: 36px;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.welcome-btn {
+  background: linear-gradient(90deg, #43c6ac 0%, #191654 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 38px;
+  font-size: 1.15rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 24px #43c6ac55;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  outline: none;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.welcome-btn:hover, .welcome-btn:focus {
+  background: linear-gradient(90deg, #191654 0%, #43c6ac 100%);
+  transform: scale(1.07) translateY(-2px);
+  box-shadow: 0 8px 32px #43c6ac99;
+} 
